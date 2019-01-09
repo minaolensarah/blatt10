@@ -1,13 +1,13 @@
 package bibliothekVonAlexandria;
 
 /**
- * Ein Mitarbeiter hat einen Namen, einen Titel und keine maximale Ausleihdauer, man kann den Namen und den Titel abfragen. Mitarbeiter können Medien entleihen und zurückgeben. 
+ * Ein Mitarbeiter hat einen Namen, einen Titel und keine maximale Ausleihdauer, man kann den Namen und den Titel abfragen. Mitarbeiter kÃ¶nnen Medien entleihen und zurÃ¼ckgeben. 
  * 
  * @author Sarah Breckner 
  * @author Kim Lingemann
  *
  */
-public class Mitarbeiter extends Person {
+class Mitarbeiter extends Person {
 	private String titel;
 	
 	
@@ -37,9 +37,9 @@ public class Mitarbeiter extends Person {
 	
 
 	/**
-	 * Ein Medium wird entliehen, falls es verfügbar ist
+	 * Ein Medium wird entliehen, falls es verfÃ¼gbar ist
 	 * 
-	 * Der Status des Mediums wird zu entliehen geändert und der Benutzer als Entleiher gespeichert, wenn es nicht verfügbar ist, wird "Leider ist das Medium schon verliehen" ausgegeben, das Rückgabedatum wird auf "unbekannt" gesetzt
+	 * Der Status des Mediums wird zu entliehen geÃ¤ndert und der Benutzer als Entleiher gespeichert, wenn es nicht verfÃ¼gbar ist, wird "Leider ist das Medium schon verliehen" ausgegeben, das RÃ¼ckgabedatum wird auf "unbekannt" gesetzt
 	 * 
 	 * @param sameMedium, Medium, das entliehen wird
 	 */
