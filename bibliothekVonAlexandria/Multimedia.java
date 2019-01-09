@@ -15,10 +15,33 @@ package bibliothekVonAlexandria;
  */
 class Multimedia extends Medien {
 	private final int length;
+	private final boolean isPodcast;
+	private boolean isInitialised=false;
 	
-	public Multimedia(final String title1, final int length1) {
+	public Multimedia(final String title1, final int length1, final boolean podcast) {
 		super(title1);
 		length = length1;
+		isPodcast = podcast;
+		isInitialised = true;
+	}
+	
+	/**
+	 * Die Art des Mediums wird abgefragt
+	 * 
+	 * Die Art des Mediums wird zurückgegeben
+	 * 
+	 * @requires Medium ist initialisiert
+	 * @return Podcast, für isPodcast = true
+	 * @return Film, für isPodcast = false
+	 */
+	String getTyp() {
+		assert(isInitialised);
+		if(isPodcast) {
+			return "Podcast";
+		} else {
+			return "Film";
+		}
+		
 	}
 	
 	/**
@@ -26,10 +49,12 @@ class Multimedia extends Medien {
 	 * 
 	 * Die Speildauer wird zurückgegeben
 	 * 
+	 * @requires Medium ist initialisiert
 	 * @return length, Speildauer des Mediums
 	 */
 	@Override
 	int getLength() {
+		assert(isInitialised);
 		return length;
 	}
 
