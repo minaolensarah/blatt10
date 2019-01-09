@@ -12,7 +12,7 @@ package bibliothekVonAlexandria;
  *
  *
  */
-public abstract class Medien {
+abstract class Medien {
 	private final String title;
 	private String borrowedBy;
 	private String borrowedUntil;
