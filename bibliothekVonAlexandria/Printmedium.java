@@ -1,13 +1,13 @@
 package bibliothekVonAlexandria;
 
 /**
- * Ein Printmedium hat einen Titel, eine Seitenzahl und es ist entweder entliehen oder nicht. Dieser Status kann verändert werden, dabei wird gespeichert von wem und bis wann das Medium entliehen wurde.
+ * Ein Printmedium hat einen Titel, eine Seitenzahl und es ist entweder entliehen oder nicht. Dieser Status kann verÃ¤ndert werden, dabei wird gespeichert von wem und bis wann das Medium entliehen wurde.
  * 
  * @author Sarah Breckner 
  * @author Kim Lingemann
  *
  */
-public class Printmedium extends Medien {
+class Printmedium extends Medien {
 	private final int pages;
 	
 	public Printmedium(final int pages1, final String title1) {
@@ -16,9 +16,9 @@ public class Printmedium extends Medien {
 	}
 	
 	/**
-	 * Die Länge des Mediums wird abgefragt
+	 * Die LÃ¤nge des Mediums wird abgefragt
 	 * 
-	 * Die Seitenzahl wird zurückgegeben
+	 * Die Seitenzahl wird zurÃ¼ckgegeben
 	 * 
 	 * @return pages, Seitenzahl des Printmediums
 	 */
