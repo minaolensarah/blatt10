@@ -26,9 +26,9 @@ public abstract class Medien {
 	/**
 	 * Die Länge des Mediums wird abgefragt
 	 * 
-	 * Hier soll entweder die Seitenzahl oder die Speildauer zurückgegeben werden
+	 * Hier soll entweder die Seitenzahl oder die Spieldauer zurückgegeben werden
 	 */
-	abstract int getLenght();
+	abstract int getLength();
 	
 	/**
 	  * Der Titel des Mediums wird abgefragt
