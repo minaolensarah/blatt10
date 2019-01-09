@@ -14,7 +14,7 @@ import java.time.LocalDate;
  *
  *
  */
-public class Extern extends Person {
+class Extern extends Person {
 
 		private final int ausleihdauer=30; 
 		
