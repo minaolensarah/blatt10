@@ -76,6 +76,7 @@ public abstract class Medien {
 	  * 
 	  * @param user, Entleiher des Mediums
 	  * @requires Medium ist initialisiert 
+	  * @ensures Der Entleiher des Mediums wird unter borrowedBy gespeichert
 	  */
 	void setBorrowedBy(String user) {
 		borrowedBy = user;
@@ -86,6 +87,7 @@ public abstract class Medien {
 	  * 
 	  * @param date, Das späteste Rückgabedatum des Mediums
 	  * @requires Medium ist initialisiert 
+	  * @ensures Das späteste Rückgabedatum des Mediums wird unter borrowedUntil gespeichert
 	  */
 	void setBorrowedUntil(String date) {
 		borrowedUntil = date;
@@ -93,13 +95,19 @@ public abstract class Medien {
 	
 	/**
 	 * Der Status des Mediums wird auf entliehen gesetzt
+	 * 
+	 * @ensures available = false
 	 */
 	void borrowed() {
 		available = false;
 	}
 	
 	/**
+	 * Das Medium wird zurückgegeben
+	 * 
 	 * Der Status des Mediums wird auf verfügbar gesetzt, als Entleiher wird "niemand" und als Rückgabedatum "verfügbar" abgespeichert
+	 * 
+	 * @ensures available = true , borrowedBy = "niemand" , borrowedUntil = "verfügbar"
 	 */
 	void returned() {
 		available = true;
