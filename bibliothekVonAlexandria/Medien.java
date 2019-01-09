@@ -1,10 +1,15 @@
 package bibliothekVonAlexandria;
 
 /**
- * Ein Medium hat einen Titel, es ist entweder entliehen oder nicht. Dieser Status kann verändert werden, dabei wird gespeichert von wem und bis wann das Medium entliehen wurde.
+ * Ein Medium hat einen Titel, es ist entweder entliehen oder nicht. Dieser Status kann verÃ¤ndert werden, dabei wird gespeichert von wem und bis wann das Medium entliehen wurde.
  * 
- * @author Sarah Breckner 
- * @author Kim Lingemann
+ *  @author	Sarah Breckner 
+ *			3425446 
+ *			st163632@stud.uni-stuttgart.de 
+ * @author	Kim Lingemann
+ *			3380756 
+ *			st160814@stud.uni-stuttgart.de
+ *
  *
  */
 public abstract class Medien {
@@ -19,9 +24,9 @@ public abstract class Medien {
 	}
 	
 	/**
-	 * Die Länge des Mediums wird abgefragt
+	 * Die LÃ¤nge des Mediums wird abgefragt
 	 * 
-	 * Hier soll entweder die Seitenzahl oder die Speildauer zurückgegeben werden
+	 * Hier soll entweder die Seitenzahl oder die Speildauer zurÃ¼ckgegeben werden
 	 */
 	abstract int getLenght();
 	
@@ -38,7 +43,7 @@ public abstract class Medien {
 	/**
 	  * Der Entleiher des Mediums wird abgefragt
 	  * 
-	  * Wenn es entliehen ist, wird der Entleiher zurückgegeben, wenn nicht wird "niemand" zurückgegeben
+	  * Wenn es entliehen ist, wird der Entleiher zurÃ¼ckgegeben, wenn nicht wird "niemand" zurÃ¼ckgegeben
 	  * 
 	  * @return borrowedBy, Entleiher des Mediums
 	  * @requires Medium ist initialisiert 
@@ -48,11 +53,11 @@ public abstract class Medien {
 	}
 	
 	/**
-	  * Das späteste Rückgabedatum des Mediums wird abgefragt
+	  * Das spÃ¤teste RÃ¼ckgabedatum des Mediums wird abgefragt
 	  * 
-	  * Wenn es entliehen ist, wird Das späteste Rückgabedatum zurückgegeben, wenn nicht wird "verfügbar" zurückgegeben
+	  * Wenn es entliehen ist, wird Das spÃ¤teste RÃ¼ckgabedatum zurÃ¼ckgegeben, wenn nicht wird "verfÃ¼gbar" zurÃ¼ckgegeben
 	  * 
-	  * @return borrowedBy, Das späteste Rückgabedatum des Mediums
+	  * @return borrowedBy, Das spÃ¤teste RÃ¼ckgabedatum des Mediums
 	  * @requires Medium ist initialisiert 
 	  */
 	public String getBorrowedUntil() {
@@ -83,11 +88,11 @@ public abstract class Medien {
 	}
 	
 	/**
-	  * Das späteste Rückgabedatum des Mediums wird festgelegt
+	  * Das spÃ¤teste RÃ¼ckgabedatum des Mediums wird festgelegt
 	  * 
-	  * @param date, Das späteste Rückgabedatum des Mediums
+	  * @param date, Das spÃ¤teste RÃ¼ckgabedatum des Mediums
 	  * @requires Medium ist initialisiert 
-	  * @ensures Das späteste Rückgabedatum des Mediums wird unter borrowedUntil gespeichert
+	  * @ensures Das spÃ¤teste RÃ¼ckgabedatum des Mediums wird unter borrowedUntil gespeichert
 	  */
 	void setBorrowedUntil(String date) {
 		borrowedUntil = date;
@@ -103,15 +108,15 @@ public abstract class Medien {
 	}
 	
 	/**
-	 * Das Medium wird zurückgegeben
+	 * Das Medium wird zurÃ¼ckgegeben
 	 * 
-	 * Der Status des Mediums wird auf verfügbar gesetzt, als Entleiher wird "niemand" und als Rückgabedatum "verfügbar" abgespeichert
+	 * Der Status des Mediums wird auf verfÃ¼gbar gesetzt, als Entleiher wird "niemand" und als RÃ¼ckgabedatum "verfÃ¼gbar" abgespeichert
 	 * 
-	 * @ensures available = true , borrowedBy = "niemand" , borrowedUntil = "verfügbar"
+	 * @ensures available = true , borrowedBy = "niemand" , borrowedUntil = "verfÃ¼gbar"
 	 */
 	void returned() {
 		available = true;
 		borrowedBy = "niemand";
-		borrowedUntil = "verfügbar";
+		borrowedUntil = "verfÃ¼gbar";
 	}
 }
