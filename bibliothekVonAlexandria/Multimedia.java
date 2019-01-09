@@ -13,7 +13,7 @@ package bibliothekVonAlexandria;
  *
  *
  */
-public class Multimedia extends Medien {
+class Multimedia extends Medien {
 	private final int length;
 	
 	public Multimedia(final String title1, final int length1) {
