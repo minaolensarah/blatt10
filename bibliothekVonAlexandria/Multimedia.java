@@ -1,10 +1,16 @@
 package bibliothekVonAlexandria;
 
 /**
- * Ein Multimedium hat einen Titel, eine Spieldauer und es ist entweder entliehen oder nicht. Dieser Status kann verändert werden, dabei wird gespeichert von wem und bis wann das Medium entliehen wurde.
- * 
- * @author Sarah Breckner 
- * @author Kim Lingemann
+ * Ein Multimedium hat einen Titel, eine Spieldauer und es ist entweder entliehen oder nicht. Dieser Status kann verÃ¤ndert werden, dabei wird gespeichert von wem und bis wann das Medium entliehen wurde.
+ * Es ist entweder ein Film oder ein Podcast.
+ *
+ * @author	Sarah Breckner 
+ *			3425446 
+ *			st163632@stud.uni-stuttgart.de 
+ * @author	Kim Lingemann
+ *			3380756 
+ *			st160814@stud.uni-stuttgart.de
+ *
  *
  */
 public class Multimedia extends Medien {
@@ -16,14 +22,14 @@ public class Multimedia extends Medien {
 	}
 	
 	/**
-	 * Die Länge des Mediums wird abgefragt
+	 * Die LÃ¤nge des Mediums wird abgefragt
 	 * 
-	 * Die Speildauer wird zurückgegeben
+	 * Die Speildauer wird zurÃ¼ckgegeben
 	 * 
 	 * @return length, Speildauer des Mediums
 	 */
 	@Override
-	int getLenght() {
+	int getLength() {
 		return length;
 	}
 
