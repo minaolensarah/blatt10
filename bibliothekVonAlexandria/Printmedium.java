@@ -2,42 +2,35 @@ package bibliothekVonAlexandria;
 
 /**
  * Ein Printmedium hat einen Titel, eine Seitenzahl und es ist entweder entliehen oder nicht. 
- * Dieser Status kann verÃ¤ndert werden, dabei wird gespeichert von wem und bis wann das Medium entliehen wurde.
- * Es kann vom Typ Buch, Paper, Journal oder Zeitung sein.
+ * Dieser Status kann verändert werden, dabei wird gespeichert von wem und bis wann das Medium entliehen wurde.
  * 
- * @author Sarah Breckner 
- * @author Kim Lingemann
+ *  @author	Sarah Breckner 
+ *			3425446 
+ *			st163632@stud.uni-stuttgart.de 
+ * @author	Kim Lingemann
+ *			3380756 
+ *			st160814@stud.uni-stuttgart.de
  *
  */
-class Printmedium extends Medien {
+public class Printmedium extends Medien {
 	private final int pages;
-	private final String typ;
 	
-	public Printmedium(final int pages1, final String title1, final String typ1) {
+	public Printmedium(final int pages1, final String title1) {
 		super(title1);
-		pages=pages1;
-		typ = typ1;
-	}
-	/**
-	  * Der Typ des Printmediums wird abgefragt
-	  * 
-	  * @return typ, Typ des Printmediums
-	  * @requires Medium ist initialisiert 
-	  */
-	private String getTyp() {
-		return typ;
+		pages = pages1;		
 	}
 	
 	/**
-	 * Die LÃ¤nge des Mediums wird abgefragt
+	 * Die Länge des Mediums wird abgefragt
 	 * 
-	 * Die Seitenzahl wird zurÃ¼ckgegeben
+	 * Die Seitenzahl wird zurückgegeben
 	 * 
-	 * @return pages, Seitenzahl des Printmediums
+	 * @return pagesCopy, Seitenzahl des Printmediums
 	 */
 	@Override
-	public int getLenght() {
-		return pages;
+	public int getLength() {
+		int pagesCopy = pages;
+		return pagesCopy;
 	}
 	
 }

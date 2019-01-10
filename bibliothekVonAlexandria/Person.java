@@ -1,34 +1,38 @@
 package bibliothekVonAlexandria;
 
 /**
- * Eine Person hat einen Namen und eine spÃ¤ter zu bestimmende maximal Ausleihdauer, man kann den Namen abfragen. Personen kÃ¶nnen Medien entleihen und zurÃ¼ckgeben. 
+ * Eine Person hat einen Namen und eine später zu bestimmende maximal Ausleihdauer, man kann den Namen abfragen. Personen können Medien entleihen und zurückgeben. 
  * 
- * @author Sarah Breckner 
- * @author Kim Lingemann
+ *  @author	Sarah Breckner 
+ *			3425446 
+ *			st163632@stud.uni-stuttgart.de 
+ * @author	Kim Lingemann
+ *			3380756 
+ *			st160814@stud.uni-stuttgart.de
  *
  */
-abstract class Person {
+public abstract class Person {
 	private final String name;
-	private final int ausleihdauer;
 	
 	public Person(final String name1) {
-		name=name1;
+		name = name1;
 	}
 	
 	/**
 	  * Der Name der Person wird abgefragt
 	  * 
-	  * @return name, Name des Benutzers
+	  * @return nameCopy, Name des Benutzers
 	  * @requires Medium ist initialisiert 
 	  */
 	private String getName() {
-		return name;
+		String nameCopy = name;
+		return nameCopy;
 	}
 	
 	/**
-	 * Ein Medium wird durch einen Benutzer entliehen, falls es verfÃ¼gbar ist
+	 * Ein Medium wird durch einen Benutzer entliehen, falls es verfügbar ist
 	 * 
-	 * Der Status des Mediums wird zu entliehen geÃ¤ndert und der Benutzer als Entleiher gespeichert, wenn es nicht verfÃ¼gbar ist, wird "Leider ist das Medium schon verliehen" ausgegeben
+	 * Der Status des Mediums wird zu entliehen geändert und der Benutzer als Entleiher gespeichert, wenn es nicht verfügbar ist, wird "Leider ist das Medium schon verliehen" ausgegeben
 	 * @param sameMedium, Medium, das entliehen wird
 	 */
 	void commonBorrow(Medien sameMedium) {
@@ -45,10 +49,10 @@ abstract class Person {
 	public abstract void borrow(Medien medium);
 	
 	/**
-	 * Ein Medium wird durch einen Benutzer zurÃ¼ckgegeben
+	 * Ein Medium wird durch einen Benutzer zurückgegeben
 	 * 
 	 * @see Methode returned() der Klasse Medien
-	 * @param sameMedium, Medium, das zurÃ¼ckgegeben wird
+	 * @param sameMedium, Medium, das zurückgegeben wird
 	 */
 	public void returnMedia(Medien ruckgabeMedium) {
 		ruckgabeMedium.returned();

@@ -1,7 +1,7 @@
 package bibliothekVonAlexandria;
 
 /**
- * Ein Medium hat einen Titel, es ist entweder entliehen oder nicht. Dieser Status kann verÃ¤ndert werden, dabei wird gespeichert von wem und bis wann das Medium entliehen wurde.
+ * Ein Medium hat einen Titel, es ist entweder entliehen oder nicht. Dieser Status kann verändert werden, dabei wird gespeichert von wem und bis wann das Medium entliehen wurde.
  * 
  *  @author	Sarah Breckner 
  *			3425446 
@@ -12,7 +12,7 @@ package bibliothekVonAlexandria;
  *
  *
  */
-abstract class Medien {
+public abstract class Medien {
 	private final String title;
 	private String borrowedBy;
 	private String borrowedUntil;
@@ -24,44 +24,46 @@ abstract class Medien {
 	}
 	
 	/**
-	 * Die LÃ¤nge des Mediums wird abgefragt
+	 * Die Länge des Mediums wird abgefragt
 	 * 
-	 * Hier soll entweder die Seitenzahl oder die Spieldauer zurÃ¼ckgegeben werden
+	 * Hier soll entweder die Seitenzahl oder die Spieldauer zurückgegeben werden
 	 */
 	abstract int getLength();
 	
 	/**
 	  * Der Titel des Mediums wird abgefragt
 	  * 
-	  * @return title, Titel des Mediums
+	  * @return titleCopy, Titel des Mediums
 	  * @requires Medium ist initialisiert 
 	  */
 	public String getTitle() {
-		return title;
+		String titleCopy = title;
+		return titleCopy;
 	}
 	
 	/**
 	  * Der Entleiher des Mediums wird abgefragt
 	  * 
-	  * Wenn es entliehen ist, wird der Entleiher zurÃ¼ckgegeben, wenn nicht wird "niemand" zurÃ¼ckgegeben
+	  * Wenn es entliehen ist, wird der Entleiher zurückgegeben, wenn nicht wird "niemand" zurückgegeben
 	  * 
-	  * @return borrowedBy, Entleiher des Mediums
+	  * @return borrowedByCopy, Entleiher des Mediums
 	  * @requires Medium ist initialisiert 
 	  */
 	public String getBorrowedBy() {
-		return borrowedBy;
-	}
+		String borrowedByCopy = borrowedBy;
+		return borrowedByCopy;	}
 	
 	/**
-	  * Das spÃ¤teste RÃ¼ckgabedatum des Mediums wird abgefragt
+	  * Das späteste Rückgabedatum des Mediums wird abgefragt
 	  * 
-	  * Wenn es entliehen ist, wird Das spÃ¤teste RÃ¼ckgabedatum zurÃ¼ckgegeben, wenn nicht wird "verfÃ¼gbar" zurÃ¼ckgegeben
+	  * Wenn es entliehen ist, wird Das späteste Rückgabedatum zurückgegeben, wenn nicht wird "verfügbar" zurückgegeben
 	  * 
-	  * @return borrowedBy, Das spÃ¤teste RÃ¼ckgabedatum des Mediums
+	  * @return borrowedUntilCopy, Das späteste Rückgabedatum des Mediums
 	  * @requires Medium ist initialisiert 
 	  */
 	public String getBorrowedUntil() {
-		return borrowedUntil;
+		String borrowedUntilCopy = borrowedUntil;
+		return borrowedUntilCopy;
 	}
 	
 	/**
@@ -71,7 +73,8 @@ abstract class Medien {
 	 * @return false, wenn entliehen
 	 */
 	public boolean isItAvailable() {
-		return available;
+		boolean availableCopy = available;
+		return availableCopy;
 	}
 	
 	/**
@@ -88,11 +91,11 @@ abstract class Medien {
 	}
 	
 	/**
-	  * Das spÃ¤teste RÃ¼ckgabedatum des Mediums wird festgelegt
+	  * Das späteste Rückgabedatum des Mediums wird festgelegt
 	  * 
-	  * @param date, Das spÃ¤teste RÃ¼ckgabedatum des Mediums
+	  * @param date, Das späteste Rückgabedatum des Mediums
 	  * @requires Medium ist initialisiert 
-	  * @ensures Das spÃ¤teste RÃ¼ckgabedatum des Mediums wird unter borrowedUntil gespeichert
+	  * @ensures Das späteste Rückgabedatum des Mediums wird unter borrowedUntil gespeichert
 	  */
 	void setBorrowedUntil(String date) {
 		borrowedUntil = date;
@@ -108,15 +111,15 @@ abstract class Medien {
 	}
 	
 	/**
-	 * Das Medium wird zurÃ¼ckgegeben
+	 * Das Medium wird zurückgegeben
 	 * 
-	 * Der Status des Mediums wird auf verfÃ¼gbar gesetzt, als Entleiher wird "niemand" und als RÃ¼ckgabedatum "verfÃ¼gbar" abgespeichert
+	 * Der Status des Mediums wird auf verfügbar gesetzt, als Entleiher wird "niemand" und als Rückgabedatum "verfügbar" abgespeichert
 	 * 
-	 * @ensures available = true , borrowedBy = "niemand" , borrowedUntil = "verfÃ¼gbar"
+	 * @ensures available = true , borrowedBy = "niemand" , borrowedUntil = "verfügbar"
 	 */
 	void returned() {
 		available = true;
 		borrowedBy = "niemand";
-		borrowedUntil = "verfÃ¼gbar";
+		borrowedUntil = "verfügbar";
 	}
 }

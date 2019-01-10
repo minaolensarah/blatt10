@@ -3,7 +3,8 @@ package bibliothekVonAlexandria;
 import java.time.LocalDate;
 
 /**
- * Ein Externer hat einen Namen, und eine maximale Ausleihdauer von 30 Tagen, man kann den Namen abfragen. Externe kÃ¶nnen Medien entleihen und zurÃ¼ckgeben. 
+ * Ein Externer hat einen Namen, und eine maximale Ausleihdauer von 30 Tagen, 
+ * man kann den Namen abfragen. Externe können Medien entleihen und zurückgeben. 
  * 
  *  @author	Sarah Breckner 
  *			3425446 
@@ -14,7 +15,7 @@ import java.time.LocalDate;
  *
  *
  */
-class Extern extends Person {
+public class Extern extends Person {
 
 		private final int ausleihdauer=30; 
 		
@@ -24,17 +25,18 @@ class Extern extends Person {
 		}
 		
 		/**
-		 * Ein Medium wird entliehen, falls es verfÃ¼gbar ist
+		 * Ein Medium wird entliehen, falls es verfügbar ist
 		 * 
-		 * Der Status des Mediums wird zu entliehen geÃ¤ndert und der Benutzer als Entleiher gespeichert, wenn es nicht verfÃ¼gbar ist, wird "Leider ist das Medium schon verliehen" ausgegeben, das RÃ¼ckgabedatum wird auf 30 Tage nach dem aktuellen Datum gesetzt
+		 * Der Status des Mediums wird zu entliehen geändert und der Benutzer als Entleiher gespeichert, 
+		 * wenn es nicht verfügbar ist, wird "Leider ist das Medium schon verliehen" ausgegeben, 
+		 * das Rückgabedatum wird auf 30 Tage nach dem aktuellen Datum gesetzt.
 		 * 
 		 * @param sameMedium, Medium, das entliehen wird
 		 */
 		@Override
 		public void borrow(Medien medium) {
 				this.commonBorrow(medium);
-				LocalDate todaysDate;
-				String expiryDate = todaysDate.plusDays(ausleihdauer).toString();
+				String expiryDate = LocalDate.now().plusDays(ausleihdauer).toString();
 				medium.setBorrowedUntil(expiryDate);
 		}
 	
